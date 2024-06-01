@@ -1,0 +1,56 @@
+aiohttp @ file:///D:/bld/aiohttp_1713964967629/work
+aiosignal @ file:///home/conda/feedstock_root/build_artifacts/aiosignal_1667935791922/work
+async-timeout @ file:///home/conda/feedstock_root/build_artifacts/async-timeout_1691763562544/work
+attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1704011227531/work
+blinker @ file:///home/conda/feedstock_root/build_artifacts/blinker_1715091184126/work
+Brotli @ file:///D:/bld/brotli-split_1695989908365/work
+certifi @ file:///C:/b/abs_35d7n66oz9/croot/certifi_1707229248467/work/certifi
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1698833585322/work
+click @ file:///D:/bld/click_1692312014553/work
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
+datasets @ file:///home/conda/feedstock_root/build_artifacts/datasets_1715005688524/work
+dill @ file:///home/conda/feedstock_root/build_artifacts/dill_1706434688412/work
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1714422806336/work
+Flask @ file:///home/conda/feedstock_root/build_artifacts/flask_1712667726126/work
+frozenlist @ file:///D:/bld/frozenlist_1702645609328/work
+fsspec @ file:///home/conda/feedstock_root/build_artifacts/fsspec_1710808267764/work
+gmpy2 @ file:///C:/ci/gmpy2_1645456279018/work
+huggingface_hub @ file:///home/conda/feedstock_root/build_artifacts/huggingface_hub_1716918782753/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1713279365350/work
+importlib_metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1710971335535/work
+itsdangerous @ file:///home/conda/feedstock_root/build_artifacts/itsdangerous_1713372668944/work
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1715127149914/work
+MarkupSafe @ file:///D:/bld/markupsafe_1706900107493/work
+mpmath @ file:///C:/b/abs_7833jrbiox/croot/mpmath_1690848321154/work
+multidict @ file:///D:/bld/multidict_1707040875641/work
+multiprocess @ file:///D:/bld/multiprocess_1706514810175/work
+networkx @ file:///C:/b/abs_e6gi1go5op/croot/networkx_1690562046966/work
+numpy @ file:///D:/bld/numpy_1687808486521/work
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1710075952259/work
+pandas @ file:///D:/bld/pandas_1688740647960/work
+pillow @ file:///D:/bld/pillow_1712154572365/work
+pyarrow==16.1.0
+pyarrow-hotfix @ file:///home/conda/feedstock_root/build_artifacts/pyarrow-hotfix_1700596371886/work
+PySocks @ file:///D:/bld/pysocks_1661604991356/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1709299778482/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1706886791323/work
+PyYAML @ file:///D:/bld/pyyaml_1695373562753/work
+regex @ file:///D:/bld/regex_1715828541277/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1717057054362/work
+safetensors @ file:///D:/bld/safetensors_1713253588995/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+sympy @ file:///C:/b/abs_82njkonm7f/croot/sympy_1701397685028/work
+tokenizers @ file:///D:/bld/tokenizers_1713402874639/work/bindings/python
+torch==2.3.0
+torchaudio==2.3.0
+torchvision==0.18.0
+tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1714854870413/work
+transformers @ file:///home/conda/feedstock_root/build_artifacts/transformers_1717134942618/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1712329955671/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1707747584337/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1708239446578/work
+Werkzeug @ file:///home/conda/feedstock_root/build_artifacts/werkzeug_1715000201436/work
+win-inet-pton @ file:///D:/bld/win_inet_pton_1667051142467/work
+xxhash @ file:///D:/bld/python-xxhash_1696486472295/work
+yarl @ file:///D:/bld/yarl_1705508413853/work
+zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1695255097490/work
