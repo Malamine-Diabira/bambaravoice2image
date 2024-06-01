@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuma ka Ja labɔ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Alignement au centre pour le contenu */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+        #imageResult {
+            margin-top: 20px;
+            display: none;
+        }
+        #imageContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #resultImage {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kuma ka Ja labɔ</h1>
+        <button id="recordButton">Kuma</button>
+        <button id="stopButton" disabled>LaJɔ</button>
+        <p id="status">Butɔn digi ka kuma...</p>
+        <div id="imageResult">
+            <h2>Ja labɔlen</h2>
+            <div id="imageContainer">
+                <img id="resultImage" src="" alt="Generated Image">
+            </div>
+            <p id="transcription"></p>
+            <p id="translation"></p>
+        </div>
+    </div>
+
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        document.getElementById('recordButton').addEventListener('click', async () => {
+            let stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.start();
+
+            document.getElementById('status').textContent = "Kan bɛka ta";
+            document.getElementById('recordButton').disabled = true;
+            document.getElementById('stopButton').disabled = false;
+
+            mediaRecorder.addEventListener("dataavailable", event => {
+                audioChunks.push(event.data);
+            });
+
+            mediaRecorder.addEventListener("stop", () => {
+                const audioBlob = new Blob(audioChunks);
+                const audioUrl = URL.createObjectURL(audioBlob);
+                const audio = new Audio(audioUrl);
+                const formData = new FormData();
+                formData.append('file', audioBlob, 'recording.wav');
+
+                fetch('/process_audio', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('status').textContent = "Fili kɛra" + data.error;
+                    } else {
+                        document.getElementById('status').textContent = "Baara dafara";
+                        document.getElementById('transcription').textContent = "Kuma fɔlen: " + data.transcription;
+                        document.getElementById('translation').textContent = "Bayɛlɛmali: " + data.translation;
+                        document.getElementById('resultImage').src = data.image_url;
+                        document.getElementById('imageResult').style.display = 'block';
+                    }
+                });
+            });
+        });
+
+        document.getElementById('stopButton').addEventListener('click', () => {
+            mediaRecorder.stop();
+            document.getElementById('status').textContent = "A jɔra";
+            document.getElementById('recordButton').disabled = false;
+            document.getElementById('stopButton').disabled = true;
+        });
+    </script>
+</body>
+</html>
