@@ -13,12 +13,12 @@ import tempfile
 app = Flask(__name__)
 
 # Définissez votre clé API Hugging Face
-os.environ["HUGGINGFACE_TOKEN"] = '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'
+os.environ["HUGGINGFACE_TOKEN"] = 'votre_clé_hugging_face'
 
 # Fonction pour transcrire l'audio en texte Bamanankan
 def transcribe_audio(file_path):
     url = "https://bamanankanapi.kabakoo.africa/hackathon/transcribe_to_bam"
-    token = "6f13469b-7bf9-4442-ae55-58689acb2c6d"
+    token = "votre_api_kabakoo"
 
     with open(file_path, 'rb') as audio_file:
         files = {'file': audio_file}
